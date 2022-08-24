@@ -10,6 +10,10 @@ span {
     color: #e5b88a;
 }
 
+strong {
+    color: #194e92;
+}
+
 .top {
     line-height: 30px;
     background: #194e92;
@@ -26,7 +30,7 @@ span {
 }
 
 .top .container ul li {
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .main_menu {
@@ -155,6 +159,10 @@ span {
     animation: wheel 0.5s infinite;
 }
 
+#MainVisual {
+    padding: 100px 0;
+}
+
 #MainVisual .MainSlider figure {
     height: 400px;
     text-align: center;
@@ -188,40 +196,105 @@ span {
     background: #194e92;
 }
 
-.txt {
+#MainVisual .swiper-slide .txt {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.txt h2 {
+#MainVisual .swiper-slide .txt h2 {
     position: relative;
     display: inline-block;
     padding: 20px;
     font-size: 50px;
     font-weight: 700;
     color: #fff;
+    transform: translate(0, 50px);
+    opacity: 0;
 }
 
-.txt h2::after {
+#MainVisual .swiper-slide .txt h2::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(50px);
     width: 50%;
     height: 5px;
     background: #fff;
     border-radius: 10px;
+    opacity: 0;
 }
 
-.txt p {
+#MainVisual .swiper-slide.on .txt h2 {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#MainVisual .swiper-slide.on .txt h2::after {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+#MainVisual .swiper-slide .txt p {
     font-size: 20px;
     font-weight: 300;
     padding: 50px 0;
     color: #fff;
     line-height: 1.414;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+
+#MainVisual .swiper-slide.on .txt p {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+#introduce {
+    padding: 100px 0;
+}
+
+#introduce .container {
+    display: block;
+    text-align: center;
+    line-height: 1.414;
+    overflow: hidden;
+}
+
+#introduce .container h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #194e92;
+    transform: translate(0, 50px);
+    opacity: 0;
+    transition: 0.5s;
+    margin: 0 0 50px 0;
+}
+
+#introduce.on .container h2 {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#introduce .container p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.414;
+    transform: translate(0, 50px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#introduce.on .container p {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
 }
 
 #brand {
@@ -302,4 +375,77 @@ span {
 #brand ul li:hover .hover_item {
     opacity: 1;
     visibility: visible;
+}
+
+#tab {
+    padding: 100px 0;
+    background: url('../img/tab_background.jpg')no-repeat center center/cover;
+}
+
+#tab .container {
+    display: block;
+    text-align: center;
+}
+
+#tab .container h2 {
+    padding: 35px 0;
+    font-size: 50px;
+    font-weight: 500;
+    background: #194e92;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+#tab .tab_menu ul {
+    display: flex;
+}
+
+#tab .tab_menu ul>li {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 300;
+    background: #194e92;
+    color: #fff;
+    padding: 20px 0;
+    line-height: 1.414;
+}
+
+#tab .tab_menu ul>li.on {
+    background: #fff;
+    color: #194e92;
+}
+
+#tab .tab_menu ul>li img {
+    width: 25%;
+    filter: invert(1);
+}
+
+#tab .tab_menu ul>li.on img {
+    filter: invert(0);
+}
+
+#tab .tab_menu ul>li~li {
+    border-left: 1px solid #fff;
+}
+
+#tab .tab_content ul {
+    display: flex;
+}
+
+#tab .tab_content ul li {
+    padding: 10px 0;
+}
+
+#tab .tab_content .tit img {
+    margin: 0 0 20px 0;
+}
+
+#tab .tab_content .tit p {
+    color: #fff;
+}
+
+@keyframes wheel {
+    to {
+        top: 10px;
+    }
 }

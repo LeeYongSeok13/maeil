@@ -18,11 +18,26 @@ window.addEventListener('DOMContentLoaded', function () {
             clickable: true,
         },
         on: {
-            slideChange: function () {
+            slideChangeTransitionEnd: function () {
+                const SS = document.querySelectorAll('.swiper-slide');
+                const SSA = document.querySelector('.swiper-slide-active')
+                SS.forEach(
+                    e => e.classList.remove('on')
+                );
+                SSA.classList.add('on');
             }
-        }
+        },
     });
 
+    const Introduce = document.querySelectorAll('.active-event');
+    window.addEventListener('scroll', function () {
+        let sct = window.scrollY;
+        Introduce.forEach(el => {
+            if (sct > el.offsetTop - 700) {
+                el.classList.add('on')
+            }
+        })
+    });
 
 
     let brandBg = document.querySelector('#brand');
@@ -46,4 +61,14 @@ window.addEventListener('DOMContentLoaded', function () {
         brandBg.style.backgroundImage = `url('../img/bg04.jpg')`;
     });
 
+    const MENU = document.querySelector('.tab_menu ul li');
+    const TAB = document.querySelector('.tab_content ul');
+    MENU.forEach((el, idx) => {
+        el.addEventListener('click,', (e) => {
+            MENU.forEach(el => el.classList.remove('on'));
+            el.classList.add('on');
+            TAB.forEach(el => el.classList.remove('on'));
+            el.classList.add('on');
+        })
+    })
 })
