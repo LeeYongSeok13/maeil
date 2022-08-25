@@ -61,14 +61,33 @@ window.addEventListener('DOMContentLoaded', function () {
         brandBg.style.backgroundImage = `url('../img/bg04.jpg')`;
     });
 
-    const MENU = document.querySelector('.tab_menu ul li');
-    const TAB = document.querySelector('.tab_content ul');
+    const MENU = document.querySelectorAll('.menu li');
+    const TAB = document.querySelectorAll('.tab_content>ul');
     MENU.forEach((el, idx) => {
-        el.addEventListener('click,', (e) => {
+        el.addEventListener('click', (e) => {
             MENU.forEach(el => el.classList.remove('on'));
             el.classList.add('on');
             TAB.forEach(el => el.classList.remove('on'));
-            el.classList.add('on');
+            TAB[idx].classList.add('on');
         })
-    })
-})
+    });
+
+    const ScrollBtn = document.querySelector('.toTop i');
+    const BtnVisibility = () => {
+        if (window.scrollY > 500) {
+            ScrollBtn.style.visibility = "visible";
+        } else {
+            ScrollBtn.style.visibility = "hidden";
+        }
+    };
+
+    ScrollBtn.style.visibility = "hidden";
+    document.addEventListener("scroll", function () {
+        BtnVisibility();
+    });
+    ScrollBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+
+});

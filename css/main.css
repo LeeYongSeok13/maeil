@@ -260,29 +260,46 @@ strong {
 }
 
 #introduce .container {
-    display: block;
+    display: flex;
     text-align: center;
     line-height: 1.414;
     overflow: hidden;
+    gap: 50px;
 }
 
-#introduce .container h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #194e92;
+#introduce .container .left img {
+    width: 100%;
     transform: translate(0, 50px);
     opacity: 0;
-    transition: 0.5s;
-    margin: 0 0 50px 0;
 }
 
-#introduce.on .container h2 {
+#introduce.on .container .left img {
     transform: translate(0, 0);
     opacity: 1;
     transition: 0.5s;
 }
 
-#introduce .container p {
+#introduce .container .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#introduce .container .right h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #194e92;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+
+#introduce.on .container .right h2 {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#introduce .container .right p {
     font-size: 15px;
     font-weight: 300;
     line-height: 1.414;
@@ -291,7 +308,7 @@ strong {
     transition: 0.5s;
 }
 
-#introduce.on .container p {
+#introduce.on .container .right p {
     transform: translate(0, 0);
     opacity: 1;
     transition: 0.5s 0.5s;
@@ -391,16 +408,15 @@ strong {
     padding: 35px 0;
     font-size: 50px;
     font-weight: 500;
-    background: #194e92;
+    background: inherit;
     color: #fff;
-    border-bottom: 1px solid #fff;
 }
 
 #tab .tab_menu ul {
     display: flex;
 }
 
-#tab .tab_menu ul>li {
+#tab .tab_menu .menu>li {
     flex: 1;
     font-size: 15px;
     font-weight: 300;
@@ -410,30 +426,40 @@ strong {
     line-height: 1.414;
 }
 
-#tab .tab_menu ul>li.on {
+#tab .tab_menu .menu>li.on {
     background: #fff;
     color: #194e92;
 }
 
-#tab .tab_menu ul>li img {
+#tab .tab_menu .menu>li img {
     width: 25%;
     filter: invert(1);
 }
 
-#tab .tab_menu ul>li.on img {
+#tab .tab_menu .menu>li.on img {
     filter: invert(0);
 }
 
-#tab .tab_menu ul>li~li {
+#tab .tab_menu .menu>li~li {
     border-left: 1px solid #fff;
 }
 
+#tab .tab_content {
+    position: relative;
+}
+
 #tab .tab_content ul {
+    display: none;
+    justify-content: space-between;
+}
+
+#tab .tab_content ul.on {
     display: flex;
 }
 
 #tab .tab_content ul li {
-    padding: 10px 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.15);
 }
 
 #tab .tab_content .tit img {
@@ -442,6 +468,125 @@ strong {
 
 #tab .tab_content .tit p {
     color: #fff;
+}
+
+
+#Footer_top {
+    padding: 25px 0;
+    background: #464d5d;
+    border-bottom: 1px solid #fff;
+}
+
+#Footer_top .container {
+    justify-content: space-between;
+}
+
+#Footer_top .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Footer_top strong {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+}
+
+#Footer_top h2 {
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+
+#Footer_top p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#Footer_top .news .news_inner {
+    display: flex;
+    gap: 20px;
+}
+
+#Footer_top .news strong {
+    margin: 0 0 20px 0;
+}
+
+#Footer_top .news_inner .news_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#Footer_top .news_inner .news_txt h3 {
+    font-size: 20px;
+    color: #fff;
+}
+
+#Footer_top .sns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#Footer_top .sns i {
+    font-size: 30px;
+    color: #fff;
+}
+
+#Footer_bottom {
+    padding: 25px 0;
+    background: #464d5d;
+}
+
+#Footer_bottom .container {
+    display: block;
+}
+
+#Footer_bottom ul {
+    display: flex;
+    gap: 30px;
+    margin: 0 0 10px 0;
+}
+
+#Footer_bottom ul li {
+    position: relative;
+    font-size: 13px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#Footer_bottom ul li~li::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background: #fff;
+}
+
+#Footer_bottom p {
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.414;
+}
+
+.toTop i {
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 20px;
+    z-index: 999;
 }
 
 @keyframes wheel {
