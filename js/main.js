@@ -46,19 +46,19 @@ window.addEventListener('DOMContentLoaded', function () {
     let brandLi03 = document.querySelector('#brand .container ul li:nth-child(3)');
     let brandLi04 = document.querySelector('#brand .container ul li:nth-child(4)');
     brandLi01.addEventListener('mouseover', function () {
-        brandBg.style.backgroundImage = `url('../img/bg01.jpg')`;
+        brandBg.style.backgroundImage = `url('../img/brand_bg01.jpg')`;
     });
 
     brandLi02.addEventListener('mouseover', function () {
-        brandBg.style.backgroundImage = `url('../img/bg02.jpg')`;
+        brandBg.style.backgroundImage = `url('../img/brand_bg02.jpg')`;
     });
 
     brandLi03.addEventListener('mouseover', function () {
-        brandBg.style.backgroundImage = `url('../img/bg03.jpg')`;
+        brandBg.style.backgroundImage = `url('../img/brand_bg03.jpg')`;
     });
 
     brandLi04.addEventListener('mouseover', function () {
-        brandBg.style.backgroundImage = `url('../img/bg04.jpg')`;
+        brandBg.style.backgroundImage = `url('../img/brand_bg04.jpg')`;
     });
 
     const MENU = document.querySelectorAll('.menu li');
