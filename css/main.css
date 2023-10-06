@@ -317,7 +317,10 @@ strong {
 #brand {
     margin: 100px 0;
     padding: 100px 0;
-    background: url('../img/brand_bg01.jpg');
+    background-image: url('../img/brand_bg01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #brand ul {
@@ -330,7 +333,6 @@ strong {
     background: rgba(0, 0, 0, 0.25);
     color: #fff;
     padding: 50px;
-
 }
 
 #brand ul li h2 {
@@ -424,6 +426,10 @@ strong {
     color: #fff;
     padding: 20px 0;
     line-height: 1.414;
+}
+
+#tab .tab_menu .menu>li:hover {
+    cursor: pointer;
 }
 
 #tab .tab_menu .menu>li.on {
@@ -592,5 +598,12 @@ strong {
 @keyframes wheel {
     to {
         top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
     }
 }
