@@ -600,10 +600,3 @@ strong {
         top: 10px;
     }
 }
-
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-        margin: 0 auto;
-    }
-}
